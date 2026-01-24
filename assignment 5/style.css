@@ -1,0 +1,12 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+}
+button {
+    margin: 10px 0;
+    padding: 10px;
+}
+.result {
+    margin-top: 20px;
+    font-weight: bold;
+}
