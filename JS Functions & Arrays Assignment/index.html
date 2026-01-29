@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student List</title>
+</head>
+<body>
+
+  <h2>Student Names</h2>
+  <ul id="studentList"></ul>
+
+  <input type="text" id="searchInput" placeholder="Enter name to search" />
+  <button onclick="searchStudent()">Search</button>
+
+  <p id="result"></p>
+
+  <script>    
+    const students = ["Aradhya", "Rohan", "Sneha", "Aman", "Priya"];
+
+    function displayStudents() {
+      const list = document.getElementById("studentList");
+      list.innerHTML = ""; 
+
+      students.forEach(function(name) {
+        const li = document.createElement("li");
+        li.textContent = name;
+        list.appendChild(li);
+      });
+    }
+
+    function searchStudent() {
+      const input = document.getElementById("searchInput").value.trim().toLowerCase();
+      const result = document.getElementById("result");
+
+      const isFound = students.some(name => name.toLowerCase() === input);
+
+      if (isFound) {
+        result.textContent = "Student found ✅";
+        result.style.color = "green";
+      } else {
+        result.textContent = "Student not found ❌";
+        result.style.color = "red";
+      }
+    }
+
+    displayStudents();
+  </script>
+
+</body>
+</html>
